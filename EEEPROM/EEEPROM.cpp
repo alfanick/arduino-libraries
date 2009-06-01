@@ -72,6 +72,7 @@ void EEEPROM::write(unsigned int addr, uint8_t value)
   Wire.send((int)(addr & 0xFF)); // LSB
   Wire.send((int)value);
   Wire.endTransmission();
+  // It's a magic! Wait for storing byte
   delay(5);
 }
 
